@@ -5,8 +5,8 @@ import java.util.stream.Stream;
 public class Main {
     public static void main(String[] args) throws Exception {
         
-        //intância da classe Pessoa com os parâmetros já inicializados *onde a variável pessoa(que é o objeto da classe Pessoa)
-        //recebe a classe Pessoa e acesso o método.
+        /*intância da classe Pessoa com os parâmetros já inicializados onde a variável pessoa(que é o objeto da classe Pessoa),
+        recebe a classe Pessoa e acesso o método.*/
         Pessoa pessoa = new Pessoa("João VItor", 32);
         pessoa.saudacao();
         System.out.println("************************");
@@ -17,7 +17,7 @@ public class Main {
         irmaos.add(new Pessoa("João Manoel", 34));
         irmaos.add(new Pessoa("João Pedro", 26));
 
-        //forEach do tipo Pessoa *onde recebe a lista de nomes(irmaos) para percorrer a lista toda e imprimi-lá.
+        //forEach do tipo Pessoa onde recebe a lista de nomes(irmaos) para percorrer a lista toda e imprimi-lá.
         for (Pessoa p : irmaos) {
             System.out.println(p);
         }
@@ -28,13 +28,13 @@ public class Main {
         irmaos.forEach(System.out::println);
         System.out.println("************************");
 
-        //cria um fluxo de objetos Pessoa *diretamente não sendo necessário criar uma coleção separada.
+        //cria um fluxo de objetos Pessoa diretamente não sendo necessário criar uma coleção separada.
         Stream<Pessoa> nomes = Stream.of(
             new Pessoa("João", 32),
             new Pessoa("Maria", 30),
             new Pessoa("Marcos", 35)
         );
-        //forEach e método de referência para imprimir.
+        //forEach passando como parâmetro o método de referência ou uma lambda.
         nomes.forEach(n -> System.out.println(n));
         nomes.forEach(System.out::println);
     }
